@@ -1,0 +1,9 @@
+approvers:
+- technical-oversight-committee
+- knative-release-leads
+- client-writers
+- kn-plugin-sample-approvers
+
+reviewers:
+- client-writers
+- kn-plugin-sample-approvers
