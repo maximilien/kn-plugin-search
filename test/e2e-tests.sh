@@ -1,4 +1,4 @@
-# Copyright 2020 The Knative Authors
+# Copyright 2022 The Knative Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ echo "E2E testing $PLUGIN"
 
 run() {
 
-  header "Running plugin sample e2e tests for Knative Serving $KNATIVE_SERVING_VERSION and Eventing $KNATIVE_EVENTING_VERSION"
+  header "Running plugin search e2e tests for Knative Serving $KNATIVE_SERVING_VERSION and Eventing $KNATIVE_EVENTING_VERSION"
 
   go_test_e2e -timeout=45m ./test/e2e || fail_test
 

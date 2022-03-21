@@ -1,4 +1,4 @@
-// Copyright © 2021 The Knative Authors
+// Copyright © 2022 The Knative Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import (
 func NewRootCommand() *cobra.Command {
 
 	var rootCmd = &cobra.Command{
-		Use:   "kn-sample",
-		Short: "Sample kn plugin printing out a nice message",
-		Long:  `Longer description of this fantastic plugin that can go over several lines.`,
+		Use:   "kn-plugin-search",
+		Short: "Search and discover kn plugins",
+		Long:  `Search for kn plugins to discover new and existing plugins by the community.`,
 	}
 
 	rootCmd.AddCommand(command.NewPrintCommand())

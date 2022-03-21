@@ -1,3 +1,17 @@
+## kn-plugin-search
+
+A `kn` plugin to search and discover other `kn` plugins
+
+## User's Guide
+
+`kn plugin search *`
+`kn plugin search myplugin`
+`kn plugin search fancy*`
+
+## Developers
+
+TBD
+
 ## Hacky scripts
 
 This directory contains all the build and CI scripts that are used in building

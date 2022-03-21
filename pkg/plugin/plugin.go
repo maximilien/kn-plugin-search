@@ -1,4 +1,4 @@
-// Copyright © 2021 The Knative Authors
+// Copyright © 2022 The Knative Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ type plugin struct{}
 
 // Name returns the plugin's name
 func (pl *plugin) Name() string {
-	return "kn-sample"
+	return "kn-plugin-search"
 }
 
 // Execute represents the plugin's entrypoint when called through kn
@@ -40,21 +40,21 @@ func (pl *plugin) Execute(args []string) error {
 	defer (func() {
 		os.Args = oldArgs
 	})()
-	os.Args = append([]string{"kn-sample"}, args...)
+	os.Args = append([]string{"kn-plugin-search"}, args...)
 	return cmd.Execute()
 }
 
 // Description is displayed in kn's help message
 func (pl *plugin) Description() (string, error) {
-	return "A sample plugin", nil
+	return "Search and discover kn plugins", nil
 }
 
 // CommandParts defines for plugin is executed from kn
 func (pl *plugin) CommandParts() []string {
-	return []string{"sample"}
+	return []string{"plugin", "search"}
 }
 
 // Path is empty because its an internal plugins
 func (pl *plugin) Path() string {
-	return ""
+	return "plugin"
 }
