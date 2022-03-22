@@ -1,0 +1,19 @@
+---
+source-kafka:
+  status: GA
+  description: kn-plugin-source-kafka is a plugin of Knative Client, for management of kafka event source interactively from the command line.
+  url: https://github.com/knative-sandbox/kn-plugin-source-kafka
+  release:
+    download: https://github.com/knative-sandbox/kn-plugin-source-kafka/releases/download/v0.22.0    
+    shas:
+      darwin-amd64: 9a410c2062a351f778fcf84a85909d50a886dfc5daeb5554a16b03db201ee83c
+      linux-amd64: 650136bb614910c38aa3c0e12321bba2fda1df321746ad4a1f53f3f5d2229096
+admin:
+  status: alpha
+  description: The kn admin is a plugin of Knative client and it is designed to help administrators and operators better manage a Knative platform installation with kn CLI. This plugin’s main objective is to make administration and operation workflows easier, for instance by making it easy to accomplish tasks such as feature flags enablement or disablement with one command, instead of many manual steps like modifying ConfigMaps or yaml files.
+  url: https://github.com/knative-sandbox/kn-plugin-admin
+  release:
+    download: https://github.com/knative-sandbox/kn-plugin-admin/releases/download/v0.22.0
+    shas:
+      darwin-amd64: d1232dffcfaca518b77f54b6ce49b478b1e9409203acb9ea4a1cfe38194f5576
+      linux-amd64: 863ea33842f6ec32eaa6818f45554e1cb997731a52248d659c687c9d2ff00f23
