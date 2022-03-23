@@ -1,71 +1,51 @@
-// This documentation describes your plugin. It is written in Asciidoc, which
-// is very similar to Markdown, but much more powerful (i.e. it allows comments
-// like this). However, if you feel uncomfortable with Asciidoc, feel free
-// to use Markdown for your plugin.
+README.adoc — kn-plugin-search
 
-// See the short reference at for the main commands: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
-// Tip: Asciidoc authors often use to line-break after each sentence. That way, it's easier to move things around and to identify parts.
+== kn-plugin-search
 
-
-// The project layout follows the recommendation of https://github.com/golang-standards/project-layout, except that we use a `hack/` directory instead of `scripts/` (a Knative convention)
-
-IMPORTANT: This repository should be used as a blueprint for creating your own https://github.com/knative/client[kn] plugins. See the link:BLUEPRINT.md[BLUEPRINT.md] for how to kickstart your plugin.
-
-== kn-sample
-
-// Add a summary description here. This description should fit in a single sentence.
-`kn sample` prints out a friendly message to the user.
+`kn plugin search` helps Knative users discover existing and new `kn` plugins. It is itself a plugin.
 
 === Description
 
-// A longer description which also describes the use cases that this plugin solves.
+With `kn-plugin-search` you can enhance your experience with Knative and its `kn` command line in two ways:
 
-With this plugin, you can make the world a better place.
-Use it to greet your users with a friendly "Hello".
+1. Searching and finding existing approved, alpha, and beta plugins shared by the community.
 
-Also, and more important, this plugin serves as a blueprint for other plugins.
-So copy over the content of this directory into your new plugin and
-adapt it you your code.
-Including this README.
+2. Getting salient details about `kn` plugins to help you decide if you want to try it. This also includes links to download the latest version of the plugin.
+
+`kn-plugin-search` returns latest know plugins by scanning GitHub for projects that have a specific naming pattern (`kn-plugin-*`) and also maintains a list of approved and WIP projects by the human maintainers of this project.
 
 === Usage
 
-// This is the reference section explaining all options.
-// This should start to contain the help message in a preformatted block
-// and then all commands individually.
-
-// Note that the command should print out the format used when called via `kn`, not directly
-// so, it's "kn hello [command]", not "kn-hello [command]"
 ----
-A longer description of this fantastic plugin that can go over several lines.
+`kn plugin search` helps Knative users discover existing and new `kn` plugins. It is itself a plugin.
 
 Usage:
-  kn sample [command]
-
+  kn plugin search [command]
+  
 Available Commands:
   help        Help about any command
-  print       Print the argument
   version     Prints the plugin version
 
 Flags:
-  -h, --help   help for kn-hello
+  -h, --help   help for kn-plugin-search
+  -A, --all    returns all currently known plugins
 
-Use "kn-sample [command] --help" for more information about a command.
+Use "kn-plugin-search [command] --help" for more information about a command.
 ----
 
-==== `kn sample print`
+==== `kn plugin search`
 
 ----
-Print the argument
+Search for plugins that have name WORDS or whose name match REGEX
 
 Usage:
-  kn sample print [flags]
+  kn plugin search [WORDS | REGEX] [flags]
 
 Flags:
   -h, --help   help for print
 ----
 
-==== `kn sample version`
+==== `kn plugin search version`
 
 This command prints out the version of this plugin and all extra information which might help, for example when creating bug reports.
 
@@ -73,7 +53,7 @@ This command prints out the version of this plugin and all extra information whi
 Prints the plugin version
 
 Usage:
-  kn sample version [flags]
+  kn plugin search version [flags]
 
 Flags:
   -h, --help   help for version
@@ -81,21 +61,27 @@ Flags:
 
 === Examples
 
-// Add examples that can be tried out by the user and which reflects the use cases that are solved by this plugin
-// The use case should be part of a #### headline, followed by a short description
-// of that use case and then the concrete examples
-==== Print out a beautiful message
+==== Search for all known plugins
 
-Often you want to greet your users with a charming message.
-In this case, you can use the `kn sample print` command.
-The only required argument here is the name of the person to greet.
+If you want to see the list of all known plugins (approved or not) then invoke without any parameters
 
 .Example Greeting
 ====
 ----
-$ kn sample print Carl
+$ kn plugin search
 
-Hello, Carl
+kn-plugin-diag 
+alpha
+A plugin to show Knative service diagnostic
+https://github.com/knative-sandbox/kn-plugin-diag
+
+
+kn-plugin-migration
+alpha
+A plugin to help you migrate one Knative cluster to another
+https://github.com/knative-sandbox/kn-plugin-migration
+
+…
 ----
 ====
 
@@ -106,7 +92,7 @@ The `kn sample version` command helps you to identify the version of this plugin
 .Example version output
 =====
 -----
-$ kn sample version
+$ kn plugin search version
 
 Version:      v20200402-local-a099aaf-dirty
 Build Date:   2020-04-02 18:16:20
