@@ -30,6 +30,7 @@ func NewRootCommand() *cobra.Command {
 
 	rootCmd.AddCommand(command.NewPrintCommand())
 	rootCmd.AddCommand(command.NewVersionCommand())
+	rootCmd.AddCommand(command.NewSearchCommand())
 
 	return rootCmd
 }
